@@ -1,0 +1,403 @@
+{
+  "version": 2,
+  "enabled": true,
+  "device": {
+    "mode": "hid",
+    "hid_layout": {
+      "report_id": 1,
+      "buttons": [
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "axis_x": {
+        "offset": 1,
+        "size": 1,
+        "signed": true,
+        "full_scale": 0
+      },
+      "axis_y": {
+        "offset": 2,
+        "size": 1,
+        "signed": true,
+        "full_scale": 0
+      },
+      "wheel": {
+        "offset": 3,
+        "size": 1,
+        "signed": true,
+        "full_scale": 0
+      }
+    }
+  },
+  "suppress_movement": false,
+  "button_count": 3,
+  "panic_hotkey": "Ctrl+Alt+F12",
+  "start_minimized": false,
+  "theme": "dark",
+  "accent": "#F97316",
+  "language": "pl",
+  "bridge_enabled": true,
+  "bridge_port": 8765,
+  "profiles": [
+    {
+      "name": "New profile",
+      "match": [],
+      "is_default": true,
+      "enabled": true,
+      "buttons": {
+        "1": {
+          "type": "none",
+          "hotkey": "",
+          "button": "",
+          "nav": "orbit",
+          "view": "front",
+          "note": "",
+          "toggle": false,
+          "enabled": true
+        },
+        "2": {
+          "type": "none",
+          "hotkey": "",
+          "button": "",
+          "nav": "orbit",
+          "view": "front",
+          "note": "",
+          "toggle": false,
+          "enabled": true
+        },
+        "3": {
+          "type": "none",
+          "hotkey": "",
+          "button": "",
+          "nav": "orbit",
+          "view": "front",
+          "note": "",
+          "toggle": false,
+          "enabled": true
+        },
+        "4": {
+          "type": "none",
+          "hotkey": "",
+          "button": "",
+          "nav": "orbit",
+          "view": "front",
+          "note": "",
+          "toggle": false,
+          "enabled": true
+        },
+        "5": {
+          "type": "none",
+          "hotkey": "",
+          "button": "",
+          "nav": "orbit",
+          "view": "front",
+          "note": "",
+          "toggle": false,
+          "enabled": true
+        },
+        "6": {
+          "type": "none",
+          "hotkey": "",
+          "button": "",
+          "nav": "orbit",
+          "view": "front",
+          "note": "",
+          "toggle": false,
+          "enabled": true
+        }
+      },
+      "nav": {
+        "orbit": {
+          "keys": "Shift",
+          "button": "middle",
+          "style": "drag",
+          "wheel_axis": "y"
+        },
+        "pan": {
+          "keys": "",
+          "button": "middle",
+          "style": "drag",
+          "wheel_axis": "y"
+        },
+        "zoom": {
+          "keys": "",
+          "button": "",
+          "style": "wheel",
+          "wheel_axis": "y"
+        }
+      },
+      "gestures": {
+        "move": {
+          "keys": "",
+          "button": ""
+        },
+        "scroll": {
+          "keys": "",
+          "button": ""
+        }
+      },
+      "axes": {
+        "sens_move": 1.0,
+        "sens_orbit": 1.0,
+        "sens_pan": 1.0,
+        "sens_zoom": 1.0,
+        "invert_x": false,
+        "invert_y": false,
+        "swap_xy": true,
+        "recenter": true,
+        "center_on_start": true,
+        "keep_cursor": true
+      },
+      "direct": false
+    },
+    {
+      "name": "Fusion 360",
+      "match": [
+        "Fusion360.exe",
+        "Fusion.exe"
+      ],
+      "is_default": false,
+      "enabled": true,
+      "buttons": {
+        "1": {
+          "type": "view",
+          "hotkey": "",
+          "button": "",
+          "nav": "pan",
+          "view": "top",
+          "note": "Przesuwanie widoku",
+          "toggle": false,
+          "enabled": true
+        },
+        "2": {
+          "type": "hotkey",
+          "hotkey": "Ctrl+Z",
+          "button": "",
+          "nav": "orbit",
+          "view": "front",
+          "note": "Cofnij",
+          "toggle": false,
+          "enabled": true
+        },
+        "3": {
+          "type": "hotkey",
+          "hotkey": "S",
+          "button": "",
+          "nav": "orbit",
+          "view": "front",
+          "note": "Paleta skrótów",
+          "toggle": false,
+          "enabled": true
+        },
+        "4": {
+          "type": "none",
+          "hotkey": "",
+          "button": "",
+          "nav": "orbit",
+          "view": "front",
+          "note": "",
+          "toggle": false,
+          "enabled": true
+        },
+        "5": {
+          "type": "none",
+          "hotkey": "",
+          "button": "",
+          "nav": "orbit",
+          "view": "front",
+          "note": "",
+          "toggle": false,
+          "enabled": true
+        },
+        "6": {
+          "type": "none",
+          "hotkey": "",
+          "button": "",
+          "nav": "orbit",
+          "view": "front",
+          "note": "",
+          "toggle": false,
+          "enabled": true
+        }
+      },
+      "nav": {
+        "orbit": {
+          "keys": "Shift",
+          "button": "middle",
+          "style": "drag",
+          "wheel_axis": "y"
+        },
+        "pan": {
+          "keys": "",
+          "button": "right",
+          "style": "drag",
+          "wheel_axis": "y"
+        },
+        "zoom": {
+          "keys": "",
+          "button": "",
+          "style": "wheel",
+          "wheel_axis": "y"
+        }
+      },
+      "gestures": {
+        "move": {
+          "keys": "Shift",
+          "button": "middle"
+        },
+        "scroll": {
+          "keys": "",
+          "button": ""
+        }
+      },
+      "axes": {
+        "sens_move": 1.0,
+        "sens_orbit": 1.0,
+        "sens_pan": 1.0,
+        "sens_zoom": 1.0,
+        "invert_x": false,
+        "invert_y": false,
+        "swap_xy": true,
+        "recenter": true,
+        "center_on_start": true,
+        "keep_cursor": true
+      },
+      "direct": true
+    },
+    {
+      "name": "Inventor",
+      "match": [
+        "Inventor.exe"
+      ],
+      "is_default": false,
+      "enabled": true,
+      "buttons": {
+        "1": {
+          "type": "nav",
+          "hotkey": "",
+          "button": "",
+          "nav": "pan",
+          "view": "front",
+          "note": "Przesuwanie widoku",
+          "toggle": false,
+          "enabled": true
+        },
+        "2": {
+          "type": "hotkey",
+          "hotkey": "Ctrl+Z",
+          "button": "",
+          "nav": "orbit",
+          "view": "front",
+          "note": "Cofnij",
+          "toggle": false,
+          "enabled": true
+        },
+        "3": {
+          "type": "hotkey",
+          "hotkey": "F6",
+          "button": "",
+          "nav": "orbit",
+          "view": "front",
+          "note": "Widok domowy",
+          "toggle": false,
+          "enabled": true
+        },
+        "4": {
+          "type": "none",
+          "hotkey": "",
+          "button": "",
+          "nav": "orbit",
+          "view": "front",
+          "note": "",
+          "toggle": false,
+          "enabled": true
+        },
+        "5": {
+          "type": "none",
+          "hotkey": "",
+          "button": "",
+          "nav": "orbit",
+          "view": "front",
+          "note": "",
+          "toggle": false,
+          "enabled": true
+        },
+        "6": {
+          "type": "none",
+          "hotkey": "",
+          "button": "",
+          "nav": "orbit",
+          "view": "front",
+          "note": "",
+          "toggle": false,
+          "enabled": true
+        }
+      },
+      "nav": {
+        "orbit": {
+          "keys": "Shift",
+          "button": "middle",
+          "style": "drag",
+          "wheel_axis": "y"
+        },
+        "pan": {
+          "keys": "",
+          "button": "middle",
+          "style": "drag",
+          "wheel_axis": "y"
+        },
+        "zoom": {
+          "keys": "",
+          "button": "",
+          "style": "wheel",
+          "wheel_axis": "y"
+        }
+      },
+      "gestures": {
+        "move": {
+          "keys": "Shift",
+          "button": "middle"
+        },
+        "scroll": {
+          "keys": "",
+          "button": ""
+        }
+      },
+      "axes": {
+        "sens_move": 1.0,
+        "sens_orbit": 1.0,
+        "sens_pan": 1.0,
+        "sens_zoom": 1.0,
+        "invert_x": false,
+        "invert_y": false,
+        "swap_xy": false,
+        "recenter": true,
+        "center_on_start": true,
+        "keep_cursor": true
+      },
+      "direct": false
+    }
+  ]
+}
