@@ -3,19 +3,19 @@ rem ===========================================================================
 rem  MAKMOUSE - generowanie pliku INSTALACYJNEGO (MAKMOUSE-<wersja>-setup.exe)
 rem
 rem  Za co odpowiada: buduje wersje folderowa programu (build_exe.bat folder),
-rem  odnajduje Inno Setup i kompiluje "Program instalacyjny (exe)\MAKMOUSE.iss".
+rem  odnajduje Inno Setup i kompiluje "Installer\MAKMOUSE.iss".
 rem  Numer wersji w nazwie instalatora pochodzi z makmouse\__init__.py.
 rem
 rem  Uzycie: kliknij ten plik dwukrotnie.
-rem  Wynik:  "Program instalacyjny (exe)\Output\MAKMOUSE-<wersja>-setup.exe"
+rem  Wynik:  "Installer\Output\MAKMOUSE-<wersja>-setup.exe"
 rem
 rem  Wymaga Inno Setup 6 (darmowy): https://jrsoftware.org/isdl.php
 rem ===========================================================================
 setlocal
 cd /d "%~dp0"
 set "KOD=1"
-set "ISS=Program instalacyjny (exe)\MAKMOUSE.iss"
-set "WYNIK=Program instalacyjny (exe)\Output"
+set "ISS=Installer\MAKMOUSE.iss"
+set "WYNIK=Installer\Output"
 
 echo.
 echo === MAKMOUSE: budowanie instalatora ===

@@ -103,12 +103,13 @@ MAKMOUSE/
 │   ├── MAKMOUSE.py             odbiór danych z MAKMOUSE i ruch kamery przez API Fusiona
 │   └── MAKMOUSE.manifest       opis dodatku dla Fusiona (JSON)
 │
-├── Program instalacyjny (exe)/
+├── Installer/
 │   ├── MAKMOUSE.iss            skrypt instalatora Inno Setup
 │   └── Output/                 zbudowane instalatory
-├── Program gotowy (bez instalatora)/
+├── Portable/
 │   ├── MAKMOUSE.exe            wynik build_exe.bat (jeden plik)
 │   └── MAKMOUSE/               wynik build_exe.bat folder
+├── Release/                    pliki przygotowane do wydania na GitHubie
 │
 ├── README.md / README.en.md    opis funkcji programu dla użytkownika
 ├── INSTALL.md                  instalacja, budowanie .exe i instalatora
@@ -451,11 +452,11 @@ pozwala na komentarze, więc nie ma w nim nagłówka).
 
 | Plik | Rola |
 |---|---|
-| `build_exe.bat` | jedno kliknięcie: sprawdza Pythona, doinstalowuje PySide6 i PyInstaller, zamyka działający MAKMOUSE, buduje, kopiuje do `Program gotowy (bez instalatora)` |
+| `build_exe.bat` | jedno kliknięcie: sprawdza Pythona, doinstalowuje PySide6 i PyInstaller, zamyka działający MAKMOUSE, buduje, kopiuje do `Portable` |
 | `MAKMOUSE-onefile.spec` | przepis PyInstallera — jeden plik `.exe` |
 | `MAKMOUSE.spec` | przepis PyInstallera — folder `exe + _internal` (używa go instalator) |
-| `build_installer.bat` | jedno kliknięcie: `build_exe.bat folder`, odnalezienie Inno Setup, kompilacja `.iss` do `Program instalacyjny (exe)\Output` |
-| `Program instalacyjny (exe)/MAKMOUSE.iss` | instalator Inno Setup: pakuje `dist\MAKMOUSE`, skróty, autostart, opcjonalny dodatek do Fusiona; wersję czyta z `makmouse/__init__.py` |
+| `build_installer.bat` | jedno kliknięcie: `build_exe.bat folder`, odnalezienie Inno Setup, kompilacja `.iss` do `Installer\Output` |
+| `Installer/MAKMOUSE.iss` | instalator Inno Setup: pakuje `dist\MAKMOUSE`, skróty, autostart, opcjonalny dodatek do Fusiona; wersję czyta z `makmouse/__init__.py` |
 | `MAKMOUSE.bat` | uruchomienie z kodu bez konsoli (`pythonw run.py`) |
 
 ---
@@ -593,7 +594,7 @@ starsze pliki wczytują się bez błędów.
 | skrót awaryjny | `Config.panic_hotkey`, `controller._panic_loop()` |
 | numer wersji | `makmouse/__init__.py` (instalator bierze go stamtąd) |
 | sposób budowania .exe | `build_exe.bat`, `MAKMOUSE-onefile.spec`, `MAKMOUSE.spec` |
-| sposób budowania instalatora | `build_installer.bat`, `Program instalacyjny (exe)/MAKMOUSE.iss` |
+| sposób budowania instalatora | `build_installer.bat`, `Installer/MAKMOUSE.iss` |
 
 ---
 

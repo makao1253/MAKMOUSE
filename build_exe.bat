@@ -5,10 +5,10 @@ rem
 rem  Za co odpowiada: sprawdza Pythona, doinstalowuje PySide6 i PyInstaller,
 rem  zamyka dzialajacy MAKMOUSE (blokuje plik), buduje program wg przepisu
 rem  MAKMOUSE-onefile.spec albo MAKMOUSE.spec i kopiuje wynik do folderu
-rem  "Program gotowy (bez instalatora)". Robocze foldery build\ i dist\ mozna kasowac.
+rem  "Portable". Robocze foldery build\ i dist\ mozna kasowac.
 rem
 rem  Uzycie: kliknij ten plik dwukrotnie albo uruchom w wierszu polecen:
-rem      build_exe.bat            -> jeden plik  "Program gotowy (bez instalatora)\MAKMOUSE.exe"
+rem      build_exe.bat            -> jeden plik  "Portable\MAKMOUSE.exe"
 rem      build_exe.bat folder     -> wersja folderowa "...\MAKMOUSE\MAKMOUSE.exe" (szybszy start)
 rem
 rem  Kolejne wersje nadpisuja poprzedni plik - nic nie trzeba sprzatac recznie.
@@ -26,11 +26,11 @@ set "TRYB=%~1"
 if /i "%TRYB%"=="folder" (
     set "SPEC=MAKMOUSE.spec"
     set "ZRODLO=dist\MAKMOUSE"
-    set "CEL=Program gotowy (bez instalatora)\MAKMOUSE"
+    set "CEL=Portable\MAKMOUSE"
 ) else (
     set "SPEC=MAKMOUSE-onefile.spec"
     set "ZRODLO=dist\MAKMOUSE.exe"
-    set "CEL=Program gotowy (bez instalatora)\MAKMOUSE.exe"
+    set "CEL=Portable\MAKMOUSE.exe"
 )
 
 echo.
@@ -89,7 +89,7 @@ if /i "%TRYB%"=="folder" (
     if exist "%CEL%" rmdir /s /q "%CEL%"
     xcopy "%ZRODLO%" "%CEL%\" /e /i /q /y >nul || goto :blad
 ) else (
-    if not exist "Program gotowy (bez instalatora)" mkdir "Program gotowy (bez instalatora)"
+    if not exist "Portable" mkdir "Portable"
     copy /y "%ZRODLO%" "%CEL%" >nul || goto :blad
 )
 

@@ -32,7 +32,7 @@ cd d:\MAKMOUSE
 Powstaje **jeden plik**:
 
 ```
-d:\MAKMOUSE\Program gotowy (bez instalatora)\MAKMOUSE.exe     (~36 MB)
+d:\MAKMOUSE\Portable\MAKMOUSE.exe     (~36 MB)
 ```
 
 Kolejne budowania nadpisują ten sam plik.
@@ -43,7 +43,7 @@ Jeśli wolisz wariant folderowy (startuje natychmiast, bo nic się nie rozpakowu
 .\build_exe.bat folder
 ```
 
-Powstaje wtedy `Program gotowy (bez instalatora)\MAKMOUSE\` — około **90 MB**,
+Powstaje wtedy `Portable\MAKMOUSE\` — około **90 MB**,
 w środku `MAKMOUSE.exe` i folder `_internal` z bibliotekami Qt.
 
 ### 2. Przenieś na docelowy komputer
@@ -149,7 +149,7 @@ PyInstaller robi folder, nie instalator. Jeśli potrzebny jest klasyczny
 kreator „Dalej → Dalej → Zakończ", zbuduj paczkę z wariantu A i opakuj ją.
 
 Gotowy skrypt leży w repozytorium:
-**[Program instalacyjny (exe)/MAKMOUSE.iss](<Program instalacyjny (exe)/MAKMOUSE.iss>)**.
+**[Installer/MAKMOUSE.iss](<Installer/MAKMOUSE.iss>)**.
 Nie trzeba go pisać od zera — wystarczy zbudować.
 
 ### Najprościej: jedno kliknięcie
@@ -162,7 +162,7 @@ projektu. Skrypt odnajduje Inno Setup, buduje wersję folderową programu
 (`build_exe.bat folder` — sprawdza Pythona i biblioteki, pyta o zamknięcie
 działającego MAKMOUSE) i kompiluje instalator. Całość trwa 1–2 minuty.
 
-Wynik: `Program instalacyjny (exe)\Output\MAKMOUSE-1.3.3-setup.exe`, około
+Wynik: `Installer\Output\MAKMOUSE-<wersja>-setup.exe`, około
 **26 MB** (instalator kompresuje 91 MB paczki do jednego pliku).
 
 ### Ręcznie, krok po kroku
@@ -179,7 +179,7 @@ python -m PyInstaller --noconfirm --clean MAKMOUSE.spec
 **2. Skompiluj instalator** — z wiersza polecenia:
 
 ```powershell
-& "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "d:\MAKMOUSE\Program instalacyjny (exe)\MAKMOUSE.iss"
+& "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "d:\MAKMOUSE\Installer\MAKMOUSE.iss"
 ```
 
 albo otwórz `MAKMOUSE.iss` w *Inno Setup Compiler* i wciśnij **F9**.
@@ -195,7 +195,7 @@ Instalator pakuje **wersję folderową** (`dist\MAKMOUSE\`). Zwykłe `build_exe.
 Wykonaj krok 1 albo użyj `build_installer.bat`.
 
 Skrypt liczy ścieżki od **katalogu nadrzędnego wobec siebie**, więc plik `.iss`
-musi leżeć w podfolderze projektu (tak jak teraz: `Program instalacyjny (exe)\`);
+musi leżeć w podfolderze projektu (tak jak teraz: `Installer\`);
 skąd uruchomisz kompilator, nie ma znaczenia. Kopia zapisana gdzie indziej,
 np. w *Dokumentach*, zgłosi, że nie może otworzyć `makmouse\__init__.py`.
 
@@ -326,7 +326,7 @@ cd d:\MAKMOUSE
 This produces **a single file**:
 
 ```
-d:\MAKMOUSE\Program gotowy (bez instalatora)\MAKMOUSE.exe     (~36 MB)
+d:\MAKMOUSE\Portable\MAKMOUSE.exe     (~36 MB)
 ```
 
 Later builds overwrite the same file.
@@ -337,7 +337,7 @@ If you prefer the folder variant (starts instantly, because nothing is unpacked)
 .\build_exe.bat folder
 ```
 
-That produces `Program gotowy (bez instalatora)\MAKMOUSE\` — about **90 MB**,
+That produces `Portable\MAKMOUSE\` — about **90 MB**,
 containing `MAKMOUSE.exe` and an `_internal` folder with the Qt libraries.
 
 ### 2. Move it to the target computer
@@ -445,7 +445,7 @@ PyInstaller produces a folder, not an installer. If you need a classic
 "Next → Next → Finish" wizard, build the package from route A and wrap it.
 
 A ready-made script is in the repository:
-**[Program instalacyjny (exe)/MAKMOUSE.iss](<Program instalacyjny (exe)/MAKMOUSE.iss>)**.
+**[Installer/MAKMOUSE.iss](<Installer/MAKMOUSE.iss>)**.
 You do not need to write one from scratch — just build it.
 
 ### The easy way: one click
@@ -458,7 +458,7 @@ folder. The script finds Inno Setup, builds the folder variant of the program
 (`build_exe.bat folder` — checks Python and the libraries, asks before closing a
 running MAKMOUSE) and compiles the installer. It takes 1–2 minutes.
 
-Result: `Program instalacyjny (exe)\Output\MAKMOUSE-1.3.3-setup.exe`, about
+Result: `Installer\Output\MAKMOUSE-<version>-setup.exe`, about
 **26 MB** (the installer compresses the 91 MB package into a single file).
 
 ### By hand, step by step
@@ -475,7 +475,7 @@ python -m PyInstaller --noconfirm --clean MAKMOUSE.spec
 **2. Compile the installer** — from the command line:
 
 ```powershell
-& "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "d:\MAKMOUSE\Program instalacyjny (exe)\MAKMOUSE.iss"
+& "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "d:\MAKMOUSE\Installer\MAKMOUSE.iss"
 ```
 
 or open `MAKMOUSE.iss` in *Inno Setup Compiler* and press **F9**.
@@ -492,7 +492,7 @@ installer packages the **folder variant** (`dist\MAKMOUSE\`). Plain
 which the script does not use. Do step 1 or use `build_installer.bat`.
 
 The script resolves paths from **its parent directory**, so the `.iss` file has
-to live in a subfolder of the project (as it does now: `Program instalacyjny (exe)\`);
+to live in a subfolder of the project (as it does now: `Installer\`);
 where you run the compiler from does not matter. A copy saved elsewhere, e.g. in
 *Documents*, reports that it cannot open `makmouse\__init__.py`.
 

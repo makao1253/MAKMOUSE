@@ -10,9 +10,9 @@
 ; projektu (buduje program i instalator za jednym razem). Recznie:
 ;     1. build_exe.bat folder
 ;        (albo: python -m PyInstaller --noconfirm --clean MAKMOUSE.spec)
-;     2. "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "Program instalacyjny (exe)\MAKMOUSE.iss"
+;     2. "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "Installer\MAKMOUSE.iss"
 ;        albo otworz ten plik w Inno Setup Compiler i wcisnij F9.
-; Wynik / result:  Program instalacyjny (exe)\Output\MAKMOUSE-<wersja>-setup.exe
+; Wynik / result:  Installer\Output\MAKMOUSE-<wersja>-setup.exe
 ;
 ; Ten plik MUSI lezec w podfolderze projektu (jednym poziomie ponizej run.py) -
 ; ProjectDir ponizej to katalog nadrzedny i od niego liczone sa wszystkie

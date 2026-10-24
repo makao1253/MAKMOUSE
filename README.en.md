@@ -12,6 +12,36 @@ drivers, no external HID libraries.
 
 ---
 
+## How this mouse works — articles
+
+The full description of the device and the program, step by step, is on
+Instructables:
+
+* [Galileo: Building a Fully Custom 3D Navigation Controller — Part 1: Hardware and the MAKMOUSE CAD Software](https://www.instructables.com/Galileo-Building-a-Fully-Custom-3D-Navigation-Cont)
+  — building the device and the MAKMOUSE software,
+* [Galileo: Building a Fully Custom 3D Navigation Controller — Part 2: the MAKMOUSE App in Practice](https://www.instructables.com/Galileo-Building-a-Fully-Custom-3D-Navigation-Cont-1)
+  — the MAKMOUSE app in practice.
+
+---
+
+## Ready-made files — where they are
+
+Paths are relative to the MAKMOUSE project folder (the one this file is in):
+
+| What | Path | When |
+|---|---|---|
+| **Portable — single file** | `Portable\MAKMOUSE.exe` | no installation: copy the file and run it, e.g. from a USB stick; starts in 3–5 s |
+| **Portable — folder** | `Portable\MAKMOUSE\MAKMOUSE.exe` (together with `Portable\MAKMOUSE\_internal\`) | no installation, instant start; copy the whole `Portable\MAKMOUSE\` folder |
+| **Installer** | `Installer\Output\MAKMOUSE-<version>-setup.exe` — now `Installer\Output\MAKMOUSE-1.4.1-setup.exe` | classic installation: shortcuts, start with Windows, optional Fusion 360 add-in, uninstall through *Apps & features* |
+| Public release files | `Release\` | files prepared for a GitHub release (version 1.3.3 for now) |
+
+The portable files are built by [build_exe.bat](build_exe.bat) (`build_exe.bat folder`
+for the folder variant), the installer by [build_installer.bat](build_installer.bat)
+(needs Inno Setup 6). Older installers stay in `Installer\Output\` next to the new
+one. Details: [INSTALL.md](INSTALL.md).
+
+---
+
 ## Planned
 
 * **Three knob axes at once.** Today the knob gives two axes (X/Y) and the ring
@@ -581,8 +611,10 @@ build_exe.bat           builds the ready .exe (single file or folder)
 build_installer.bat     builds the MAKMOUSE-<version>-setup.exe installer with one click
 MAKMOUSE-onefile.spec   PyInstaller recipe - single file dist\MAKMOUSE.exe
 MAKMOUSE.spec           PyInstaller recipe - folder dist\MAKMOUSE\ (for the installer)
-Program instalacyjny (exe)/
+Installer/
   MAKMOUSE.iss          Inno Setup script; finished installers land in Output\
+Portable/               ready-made files without an installer (single file and folder)
+Release/                files prepared for a GitHub release
 makmouse/
   i18n.py               PL/EN translation dictionary and the tr() function
   winapi.py             Win32 structures and prototypes (ctypes)
@@ -612,7 +644,7 @@ for Python, installs `PySide6` and `pyinstaller` if they are missing, builds the
 program and leaves the finished file at:
 
 ```
-Program gotowy (bez instalatora)\MAKMOUSE.exe
+Portable\MAKMOUSE.exe
 ```
 
 That is **one ~36 MB file** you can copy to a USB stick and run on another
@@ -623,8 +655,8 @@ There are two variants:
 
 | command | result | notes |
 |---|---|---|
-| `build_exe.bat` | `Program gotowy (bez instalatora)\MAKMOUSE.exe` | one file, ~3–5 s start (unpacking into a temporary folder) |
-| `build_exe.bat folder` | `Program gotowy (bez instalatora)\MAKMOUSE\MAKMOUSE.exe` + `_internal\` | many files, instant start; this is what the installer uses |
+| `build_exe.bat` | `Portable\MAKMOUSE.exe` | one file, ~3–5 s start (unpacking into a temporary folder) |
+| `build_exe.bat folder` | `Portable\MAKMOUSE\MAKMOUSE.exe` + `_internal\` | many files, instant start; this is what the installer uses |
 
 By hand, without the script, it is exactly the same as:
 
