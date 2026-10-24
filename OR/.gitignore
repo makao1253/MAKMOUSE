@@ -1,0 +1,3 @@
+# Wyjście kompilacji STM32CubeIDE - generowane przy każdym buildzie
+Debug/
+Release/
