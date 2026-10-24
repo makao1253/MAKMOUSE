@@ -240,11 +240,12 @@ dodać w MAKMOUSE profil bez *Sterowania wprost*:
 To działa **od razu, bez pisania linijki kodu**. Kosztem jest to, że w trakcie
 gestu rusza się kursor — dokładnie ten problem, który dodatek eliminuje.
 
-**2. Creo natywnie wspiera 3Dconnexion.** Jeżeli celem jest sama funkcjonalność,
-a nie własny protokół, drugą drogą jest zgłaszanie się firmware'u jako SpaceMouse
-(VID/PID 3Dconnexion + sterownik 3DxWare). Wtedy Creo, SolidWorks, Rhino i cała
-reszta obsługują urządzenie bez jednego dodatku — ceną jest użycie cudzego
-identyfikatora producenta i uzależnienie od sterownika 3DxWare.
+**2. Creo natywnie obsługuje komercyjne manipulatory 3D.** Jeżeli celem jest
+sama funkcjonalność, a nie własny protokół, drugą drogą jest zgłaszanie się
+firmware'u jako taki manipulator (cudze VID/PID + sterownik jego producenta).
+Wtedy Creo, SolidWorks, Rhino i cała reszta obsługują urządzenie bez jednego
+dodatku — ceną jest użycie cudzego identyfikatora producenta i uzależnienie od
+jego sterownika.
 
 **3. Licencja deweloperska.** Toolkit i J-Link nie działają bez niej. Zanim
 zaplanujesz tydzień pracy, sprawdź, czy Twoja licencja Creo ją obejmuje.
@@ -451,11 +452,11 @@ MAKMOUSE profile *without* Direct control:
 This works **immediately, without writing a line of code**. The cost is that the
 cursor moves during the gesture — exactly the problem the add-in removes.
 
-**2. Creo supports 3Dconnexion natively.** If the goal is the functionality rather
-than your own protocol, the second route is to have the firmware present itself as
-a SpaceMouse (3Dconnexion VID/PID + the 3DxWare driver). Then Creo, SolidWorks,
-Rhino and everything else support the device without a single add-in — the cost is
-using somebody else's vendor identifier and depending on the 3DxWare driver.
+**2. Creo supports commercial 3D mice natively.** If the goal is the functionality
+rather than your own protocol, the second route is to have the firmware present
+itself as such a device (someone else's VID/PID + its maker's driver). Then Creo,
+SolidWorks, Rhino and everything else support the device without a single add-in —
+the cost is using somebody else's vendor identifier and depending on that driver.
 
 **3. The developer licence.** Toolkit and J-Link do not work without one. Before
 planning a week of work, check whether your Creo licence covers it.

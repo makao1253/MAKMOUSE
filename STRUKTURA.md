@@ -113,8 +113,7 @@ MAKMOUSE/
 ├── README.md / README.en.md    opis funkcji programu dla użytkownika
 ├── INSTALL.md                  instalacja, budowanie .exe i instalatora
 ├── ADDONS.md                   jak napisać dodatek do innego programu CAD (protokół mostu)
-├── STRUKTURA.md                ten dokument
-└── images/                     zdjęcia urządzenia, na których wzorowana jest grafika
+└── STRUKTURA.md                ten dokument
 ```
 
 Pliki i foldery **niezwiązane z programem** (można je pominąć przy czytaniu):

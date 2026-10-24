@@ -4,7 +4,7 @@
 
 Sterownik myszy 3D MAKMOUSE dla programów CAD (Fusion 360, Inventor). Zamienia
 gałkę, pierścień i przyciski boczne (trzy albo sześć — do wyboru w *Ustawieniach*)
-w pełną nawigację 3D, na wzór SpaceMouse.
+w pełną nawigację 3D, jak w profesjonalnych manipulatorach 3D.
 
 ## Pobieranie
 
@@ -40,7 +40,7 @@ konfiguracja zostaje.
 
 Driver for the MAKMOUSE 3D mouse for CAD applications (Fusion 360, Inventor).
 It turns the knob, the ring and the side buttons (three or six — chosen in
-*Settings*) into full 3D navigation, SpaceMouse-style.
+*Settings*) into full 3D navigation, as with professional 3D mice.
 
 ### Download
 

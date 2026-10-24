@@ -4,11 +4,21 @@
 
 A driver for your own 3D mouse, made for CAD applications (Fusion 360,
 SolidCraft, Inventor). It turns the knob, the ring and the side buttons (three
-or six — your choice in *Settings*) into full 3D navigation — the SpaceMouse
-idea, running on your hardware.
+or six — your choice in *Settings*) into full 3D navigation — as with
+professional 3D mice, running on your hardware.
 
 Python + PySide6, everything below the GUI on plain `ctypes` — no pywin32, no
 drivers, no external HID libraries.
+
+---
+
+## Planned
+
+* **Three knob axes at once.** Today the knob gives two axes (X/Y) and the ring
+  gives zoom. Later versions are planned to handle three axes at the same time,
+  as professional 3D mice do: a new report layout in the firmware, separate
+  sensitivity and inversion for each axis, and the third axis passed through the
+  bridge to the add-ins (Fusion 360, SolidCraft).
 
 ---
 
@@ -186,8 +196,8 @@ independently of VID/PID, so you can change those without touching the
 application.
 
 The device presents itself as **one collection: Multi-axis Controller**
-(`Usage Page 0x01` / `Usage 0x08`) — the same class the original SpaceMouse
-works in. Axes, scroll and buttons arrive in a single HID report.
+(`Usage Page 0x01` / `Usage 0x08`) — the same class professional 3D mice work
+in. Axes, scroll and buttons arrive in a single HID report.
 
 The state is shown by **the coloured dot next to the MAKMOUSE label** in the top
 bar: green = device connected and active, red = no device or the *Active* switch
@@ -354,8 +364,8 @@ every profile.
 Mouse emulation has a hard limit: for a 3D application to orbit, the cursor
 **must** move. That is how every drag-based solution works.
 
-SpaceMouse gets around it differently — its driver does not pretend to be a
-mouse, it hands the axes to the application, which computes the camera itself.
+Professional 3D mice get around it differently — their driver does not pretend to
+be a mouse, it hands the axes to the application, which computes the camera itself.
 MAKMOUSE now does the same for Fusion: an add-in running **inside** the program
 moves the camera through the API, so the cursor does not twitch by a single pixel
 and you can keep working with an ordinary mouse at the same time.
@@ -378,7 +388,10 @@ mode, it only switches the mode inside the add-in (e.g. orbit → pan).
 ## Direct control — SolidCraft (no add-in to install)
 
 SolidCraft has the bridge built into the program itself, so nothing is installed
-in it:
+in it. For now it exists only in a local SolidCraft build (the `makmouse-bridge`
+branch); official SolidCraft releases don't have it yet — so in such a build don't
+accept the update the program offers, as it would replace it with the official
+version.
 
 ```
 MAKMOUSE (reads HID)  --TCP 127.0.0.1:8765-->  SolidCraft  -->  camera
@@ -404,9 +417,9 @@ though, so an add-in for the next application is mostly a matter of translating
 the same three messages into its API: **[ADDONS.md](ADDONS.md)** describes how,
 with a concrete plan for Creo Parametric.
 
-An alternative that covers every package at once is emulating a real SpaceMouse
-in the firmware (3Dconnexion VID/PID + the 3DxWare driver), which does however
-mean using somebody else's vendor identifier.
+An alternative that covers every package at once would be having the firmware pose
+as a commercial 3D mouse (someone else's VID/PID and its maker's driver), which
+does however mean using somebody else's vendor identifier — MAKMOUSE doesn't.
 
 ---
 
@@ -453,8 +466,8 @@ its own profile yet.
 ### Axis sensitivity
 
 The firmware reports the axes as **relative** (`Relative`): every report carries a
-change, not a deflection. The "deflection = speed" variant (as in the original
-SpaceMouse) was removed — with this descriptor it had no way to work, and the
+change, not a deflection. The "deflection = speed" variant (as in professional 3D
+mice) was removed — with this descriptor it had no way to work, and the
 *dead zone* and *progression curve*, which served it alone, went with it.
 
 The *Sensitivity — knob* slider scales knob movement itself. The two lower ones
@@ -587,7 +600,7 @@ makmouse/
     widgets.py          cards, switches, shortcut capture, indicators
     help_dialog.py      the manual opened with the "i" button
     main_window.py      main window
-images/                 reference photos the graphic was drawn from
+fusion_addin/           the Fusion 360 add-in (SolidCraft has the bridge built in)
 ```
 
 ---

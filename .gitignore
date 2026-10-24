@@ -1,0 +1,16 @@
+# Robocze wyjście PyInstallera (build_exe.bat) - można je kasować w dowolnym momencie
+build/
+dist/
+
+# Python, mypy, ruff
+__pycache__/
+*.pyc
+.mypy_cache/
+.ruff_cache/
+
+# Pliki pośrednie kompilatora C/C++ (VS Code)
+*.obj
+*.pdb
+
+# Zdjęcia referencyjne - tylko lokalnie, nie trafiają do repozytorium
+images/

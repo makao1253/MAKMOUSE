@@ -30,7 +30,7 @@ Emulacja myszy (przeciąganie z wciśniętym przyciskiem) to jedyny kanał do
 programu, który nic nie wie o urządzeniu - i z definicji rusza kursorem. Ten
 dodatek działa WEWNĄTRZ Fusiona, więc przestawia kamerę bezpośrednio przez API.
 Kursor nie drga ani o piksel i można jednocześnie pracować zwykłą myszą.
-Tak samo działa SpaceMouse: jego sterownik nie udaje myszy, tylko podaje osie
+Tak samo działają profesjonalne manipulatory 3D: ich sterownik nie udaje myszy, tylko podaje osie
 aplikacji, która sama przelicza widok.
 
 Jak
